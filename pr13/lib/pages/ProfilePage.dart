@@ -146,6 +146,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                         left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
@@ -164,7 +167,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.edit),
+                            Icon(Icons.shopping_bag_rounded),
                             SizedBox(
                               width: 20,
                             ),
