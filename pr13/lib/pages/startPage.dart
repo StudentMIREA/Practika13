@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ItemsPage(navToShopCart: (i) => onTab(i)),
       FavoritePage(navToShopCart: (i) => onTab(i)),
       ShopCartPage(navToShopCart: (i) => onTab(i)),
-      const ProfilePage()
+      ProfilePage(navToShopCart: (i) => onTab(i))
     ];
   }
   /*

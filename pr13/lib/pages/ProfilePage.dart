@@ -6,7 +6,9 @@ import 'package:pr13/model/person.dart';
 import 'package:pr13/pages/OrderPage.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({super.key, required this.navToShopCart});
+
+  final Function(int i) navToShopCart;
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -42,7 +44,9 @@ class _ProfilePageState extends State<ProfilePage> {
   void navToOrder(BuildContext context) async {
     await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => OrderPage()),
+      MaterialPageRoute(
+          builder: (context) =>
+              OrderPage(navToShopCart: (i) => widget.navToShopCart(i))),
     );
     _refreshData();
   }

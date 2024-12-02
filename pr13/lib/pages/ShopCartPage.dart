@@ -178,6 +178,7 @@ class _ShopCartPageState extends State<ShopCartPage> {
   void _orderItems() {
     ApiService().createOrder(userEmail!);
     setState(() {});
+    _refreshData();
   }
 
   @override

@@ -2,9 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:pr13/api_service.dart';
 import 'package:pr13/model/order.dart';
 import 'package:pr13/auth/auth_service.dart';
+import 'package:pr13/pages/ItemPage.dart';
 
 class OrderPage extends StatelessWidget {
-  const OrderPage({super.key});
+  const OrderPage({super.key, required this.navToShopCart});
+
+  final Function(int i) navToShopCart;
+
+  // Переход на страницу с товарами
+  void NavToItem(index, BuildContext context) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ItemPage(
+          index: index,
+          navToShopCart: (i) => navToShopCart(i),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,28 +81,32 @@ class OrderPage extends StatelessWidget {
                           itemCount: order.products.length,
                           itemBuilder: (context, productIndex) {
                             final product = order.products[productIndex];
-                            return Container(
-                              width: 120,
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 4.0),
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 255, 255, 255),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.network(
-                                    product.image,
-                                    height: 100,
-                                    width: 100,
-                                    fit: BoxFit.cover,
-                                  ), // Изображение продукта
-                                  Text('Кол-во: ${product.quantity}',
-                                      style: TextStyle(
-                                          color: const Color.fromARGB(
-                                              255, 0, 0, 0))),
-                                ],
+                            return GestureDetector(
+                              onTap: () => NavToItem,
+                              child: Container(
+                                width: 120,
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 4.0),
+                                decoration: BoxDecoration(
+                                  color:
+                                      const Color.fromARGB(255, 255, 255, 255),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.network(
+                                      product.image,
+                                      height: 100,
+                                      width: 100,
+                                      fit: BoxFit.cover,
+                                    ), // Изображение продукта
+                                    Text('Кол-во: ${product.quantity}',
+                                        style: TextStyle(
+                                            color: const Color.fromARGB(
+                                                255, 0, 0, 0))),
+                                  ],
+                                ),
                               ),
                             );
                           },
