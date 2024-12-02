@@ -1,4 +1,4 @@
-Практическая работа 12.
+Практическая работа 13.
 =================================
 ### ФИО: Рябова Екатерина Сергеевна | Группа: ЭФБО-01-22
 ### Дисциплина: Программирование корпоративных систем
@@ -8,24 +8,18 @@
 #### 1. Создание базы данных.
 На PostgreSQL создаем 2 таблицы
 
-![image](https://github.com/user-attachments/assets/2a5ff243-bc51-43f5-9a15-142aee6fc84d)
+![image](https://github.com/user-attachments/assets/e657254c-7f59-483a-a7af-70815926cb50)
 
-![image](https://github.com/user-attachments/assets/ad3e9b4f-8dd3-441f-a8d3-1065532c1c1f)
+![image](https://github.com/user-attachments/assets/2d86c635-57df-4529-8926-f412ad156d7a)
 
 #### 2. Создание сервера.
 На языке go пишем программу которая будет обрабатывать запросы.
 
-![image](https://github.com/user-attachments/assets/9d5fa257-9dec-499c-bf54-c128eef93414)
+![image](https://github.com/user-attachments/assets/e0283687-737c-44e4-acfa-f0ef7b1b930a)
 
-После этого в командной строке запускаем программу
+![image](https://github.com/user-attachments/assets/aef00b46-21da-4bcc-8425-aedd3ef96963)
 
-![image](https://github.com/user-attachments/assets/ab266bb7-cab8-44a2-8f5d-d58a4e3bdbc0)
-
-![Снимок экрана 2024-11-04 134756](https://github.com/user-attachments/assets/a3e9e9e0-4325-43a0-af72-c64d59736943)
-
-![Снимок экрана 2024-11-04 134821](https://github.com/user-attachments/assets/95bb2d8a-010e-4dfa-a329-fa3f26df819a)
-
-#### 3. Редактирование главной страницы с товарами. 
+#### 3. Редактирование страницы профиля. 
 На главной странице находятся карточки товаров. 
 
 <img src="https://github.com/user-attachments/assets/eae7efb5-9e93-483f-806c-631853e84458" width="300">
