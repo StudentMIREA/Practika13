@@ -82,7 +82,8 @@ class OrderPage extends StatelessWidget {
                           itemBuilder: (context, productIndex) {
                             final product = order.products[productIndex];
                             return GestureDetector(
-                              onTap: () => NavToItem,
+                              onTap: () =>
+                                  NavToItem(product.productId, context),
                               child: Container(
                                 width: 120,
                                 margin:
